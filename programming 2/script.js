@@ -1,3 +1,8 @@
+let exp
+
+
+
+
 var matrix = [
     [0, 0, 1, 0, 0],
     [1, 0, 0, 2, 0],
@@ -119,5 +124,8 @@ function generateMatrix(size) {
     return newMatrix;
 
 }
+
+
+
 
 
