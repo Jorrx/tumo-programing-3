@@ -1,4 +1,5 @@
-let LivingCreature = require('./LivingCreature')
+let LivingCreature = require('./LivingCreature');
+let random = require("./random");
 
 module.exports =  class GrassEater extends LivingCreature {
 

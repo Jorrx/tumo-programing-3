@@ -1,10 +1,10 @@
-let LivingCreature = require('./LivingCreature')
+let LivingCreature = require('./LivingCreature');
+let random = require("./random");
 
-
-module.exports = class Predator {
+module.exports = class Predator extends LivingCreature {
 
     constructor(x, y, id) {
-        super(x,y,id)
+        super(x, y, id)
         this.energy = 8;
         this.getNewCoordinates()
     }

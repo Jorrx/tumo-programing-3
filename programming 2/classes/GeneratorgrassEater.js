@@ -1,9 +1,9 @@
-let LivingCreature = require('./LivingCreature')
+let LivingCreature = require('./LivingCreature');
+let random = require("./random");
 
-
-module.exports =  class GeneratorgrassEater extends LivingCreature  {
+module.exports = class GeneratorgrassEater extends LivingCreature {
     constructor(x, y, id) {
-        super(x,y,id)
+        super(x, y, id)
         this.energy = 0;
     }
     generatorgrassEater() {
@@ -18,7 +18,6 @@ module.exports =  class GeneratorgrassEater extends LivingCreature  {
             grassEaterArr.push(newGrassEater);
             matrix[newY][newX] = this.id;
             this.energy = 0;
-
         }
     }
 }

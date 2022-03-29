@@ -1,24 +1,9 @@
-
-
 module.exports = class LivingCreature {
-    constructor(x, y, index){
+    constructor(x, y, index) {
         this.x = x;
         this.y = y;
         this.multiply = 0;
         this.index = index;
-        this.directions = [
-           [this.x - 1, this.y - 1],
-           [this.x, this.y - 1],
-           [this.x + 1, this.y - 1],
-           [this.x - 1, this.y],
-           [this.x + 1, this.y],
-           [this.x - 1, this.y + 1],
-           [this.x, this.y + 1],
-           [this.x + 1, this.y + 1]
-       ];
- 
-    }
-    getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -29,10 +14,23 @@ module.exports = class LivingCreature {
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1]
         ];
+
     }
+    // getNewCoordinates() {
+    //     this.directions = [
+    //         [this.x - 1, this.y - 1],
+    //         [this.x, this.y - 1],
+    //         [this.x + 1, this.y - 1],
+    //         [this.x - 1, this.y],
+    //         [this.x + 1, this.y],
+    //         [this.x - 1, this.y + 1],
+    //         [this.x, this.y + 1],
+    //         [this.x + 1, this.y + 1]
+    //     ];
+    // }
 
     chooseCell(character) {
-        this.getNewCoordinates()
+        // this.getNewCoordinates()
         var found = [];
         for (var i in this.directions) {
             var x = this.directions[i][0];
@@ -46,4 +44,3 @@ module.exports = class LivingCreature {
         return found;
     }
 }
-
