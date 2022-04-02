@@ -1,7 +1,7 @@
 let LivingCreature = require('./LivingCreature');
 let random = require("./random");
 
-module.extends = class Grass extends LivingCreature {
+module.exports = class Grass extends LivingCreature {
     constructor(x, y, id) {
         super(x, y, id);
         this.multiply = 0;
@@ -32,4 +32,4 @@ module.extends = class Grass extends LivingCreature {
             this.multiply = 0;
         }
     }
-}
+}   

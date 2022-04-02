@@ -50,7 +50,7 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, generator, gen
     }
 }
 
-matrixGenerator(20, 1, 1);
+matrixGenerator(25, 200, 50, 25, 10);
 
 function weather() {
     if (weath == "winter") {
@@ -77,7 +77,7 @@ app.use(express.static("."));
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
-server.listen(3000);
+server.listen(3001);
 
 // function generateMatrix(size) {
 //     var newMatrix = [];
@@ -152,6 +152,13 @@ function game() {
         }
     }
 
+    if (predatorArr[0] !== undefined) {
+        for (var i in predatorArr) {
+            predatorArr[i].eat();
+        }
+    }
+
+
     //! Object to send
     let sendData = {
         matrix: matrix,
@@ -162,8 +169,7 @@ function game() {
     io.sockets.emit("data", sendData);
 }
 
-setInterval(game, 1000)
-
+setInterval(game, 80)
 function kill() {
     grassArr = []
     grassEaterArr = []
