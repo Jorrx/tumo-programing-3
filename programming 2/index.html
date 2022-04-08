@@ -10,7 +10,17 @@
 	<script src="p5.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="script.js"></script>
-	<button onclick="kill()">Kill all</button>
+	<button id="button-kill" onclick="kill()" type="button">KILL</button>
+	<style>
+		#button-kill{
+			background-color: black;
+			font-family: sans-serif;
+			color: white;
+			border: none;
+			padding: 5px 20px;
+			border-radius: 10px;
+		}
+	</style>
 </body>
 
 </html>

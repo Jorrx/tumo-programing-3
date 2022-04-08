@@ -2,7 +2,7 @@
 var socket = io();
 function setup() {
     var weath = 'winter'
-    var side = 30;
+    var side = 25;
     var matrix = [];
 
 
@@ -25,40 +25,37 @@ function setup() {
 
         for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] == 1) {
-                    if (weath == "spring") {
-                        fill("green")
+                if (matrix[i][j] === 1) {
+                    if (weath === "spring") {
+                        fill("#90EE90")
                     }
-                    else if (weath == "summer") {
-                        fill("black");
+                    else if (weath === "summer") {
+                        fill("#228B22");
                     }
-                    else if (weath == "winter") {
+                    else if (weath === "winter") {
                         fill("white")
                     }
-                    else if (weath == "autumn") {
-                        fill("#4dffa6")
+                    else if (weath === "autumn") {
+                        fill("#green")
                     }
                     rect(j * side, i * side, side, side);
-                } else if (matrix[i][j] == 2) {
+                } else if (matrix[i][j] === 2) {
                     fill("orange");
                     rect(j * side, i * side, side, side);
-                } else if (matrix[i][j] == 3) {
-                    fill('#acacac');
+                } else if (matrix[i][j] === 3) {
+                    fill('#black');
                     rect(j * side, i * side, side, side);
-                } else if (matrix[i][j] == 4) {
+                } else if (matrix[i][j] === 4) {
                     fill('red');
                     rect(j * side, i * side, side, side);   
-                } else if (matrix[i][j] == 5) {
+                } else if (matrix[i][j] === 5) {
                     fill('blue');
-                    rect(j * side, i * side, side, side);
-                } else {
-                    fill('grey');
                     rect(j * side, i * side, side, side);
                 }
             }
         }
     }
 }
-    function kill() {
-        socket.emit("kill")
-    }
+function kill() {
+    socket.emit("kill");
+  }

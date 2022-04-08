@@ -1,12 +1,13 @@
 let LivingCreature = require('./LivingCreature');
 let random = require("./random");
+let GrassEater = require("./GrassEater")
 
 module.exports = class GeneratorgrassEater extends LivingCreature {
     constructor(x, y, id) {
         super(x, y, id)
         this.energy = 0;
     }
-    generatorgrassEater() {
+    generate() {
         var emptyCells = this.chooseCell(0)
         var newCell = random(emptyCells);
         this.energy++;

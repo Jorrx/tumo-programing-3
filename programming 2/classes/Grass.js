@@ -16,7 +16,7 @@ module.exports = class Grass extends LivingCreature {
             [this.x - 1, this.y + 1],
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1]
-        ];
+        ]; 
     }
     chooseCell(character) {
         this.getNewCoordinates();

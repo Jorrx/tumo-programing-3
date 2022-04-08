@@ -92,7 +92,6 @@ module.exports = class Predator extends LivingCreature {
                     break;
                 }
             }
-
         }
     }
 }
