@@ -53,16 +53,16 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, generator, gen
 matrixGenerator(25, 200, 10, 20, 20, 20);
 
 function weather() {
-    if (weath == "winter") {
+    if (weath === "winter") {
         weath = "spring"
     }
-    else if (weath == "spring") {
+    else if (weath === "spring") {
         weath = "summer"
     }
-    else if (weath == "summer") {
+    else if (weath === "summer") {
         weath = "autumn"
     }
-    else if (weath == "autumn") {
+    else if (weath === "autumn") {
         weath = "winter"
     }
     io.sockets.emit('weather', weath)
@@ -78,36 +78,6 @@ app.get('/', function (req, res) {
     res.redirect('index.html');
 });
 server.listen(3000);
-
-// function generateMatrix(size) {
-//     var newMatrix = [];
-//     for (var y = 0; y < size; y++) {
-//         newMatrix[y] = [];
-//         for (var x = 0; x < size; x++) {
-//             var randomId = random(100);
-//             if (randomId < 50) {
-//                 newMatrix[y][x] = 1;
-//             }
-//             else if (randomId < 55) {
-//                 newMatrix[y][x] = 2;
-//             }
-//             else if (randomId < 57) {
-//                 newMatrix[y][x] = 3;
-//             }
-//             else if (randomId < 60) {
-//                 newMatrix[y][x] = 4;
-//             }
-//             else if (randomId < 65) {
-//                 newMatrix[y][x] = 5;
-//             }
-//             else {
-//                 newMatrix[y][x] = 0;
-//             }
-//         }
-//     }
-//     return newMatrix;
-// }
-
 
 function createObjects() {
     for (var y = 0; y < matrix.length; y++) {
@@ -197,17 +167,7 @@ function kill() {
     }
 }
 
-
-
-function generate() {
-    matrixGenerator(25, 200, 10, 20, 20, 20);
-    createObjects();
-}
-
 io.on('connection', function (socket) {
     createObjects();
     socket.on("kill", kill);
-    socket.on("generate", generate);
 });
-////   Create static Json=
-
